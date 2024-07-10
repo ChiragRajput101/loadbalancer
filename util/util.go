@@ -2,10 +2,11 @@ package util
 
 import (
 	"fmt"
-	"loadbalancer/backend"
 	"log"
 	"net/url"
 	"strconv"
+
+	"github.com/ChiragRajput101/loadbalancer/backend"
 )
 
 func SpinUpServers(start string, count int) []*backend.BackendServer {

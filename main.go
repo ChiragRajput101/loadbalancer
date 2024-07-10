@@ -1,10 +1,11 @@
 package main
 
 import (
-	"loadbalancer/backend"
-	"loadbalancer/util"
 	"log"
 	"net/http"
+
+	"github.com/ChiragRajput101/loadbalancer/backend"
+	"github.com/ChiragRajput101/loadbalancer/util"
 )
 
 func main() {
