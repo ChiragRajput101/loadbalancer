@@ -40,8 +40,7 @@ func (r *RoundRobin) Next(servers []*backend.Server) (*backend.Server, error) {
 	return nil, fmt.Errorf("no healthy server available")
 }
 
-// load algo
-func Init() {
+func LoadStrategy(algo string) Algorithm {
 	strategy = make(map[string]func() Algorithm)
 
 	// init algo
@@ -50,9 +49,7 @@ func Init() {
 			ctr: 0,
 		}
 	}
-}
 
-func LoadStrategy(algo string) Algorithm {
 	st, ok := strategy[algo]
 	if !ok {
 		fmt.Println("no such strategy, falling back to Round Robin")

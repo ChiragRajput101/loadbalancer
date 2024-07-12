@@ -15,6 +15,7 @@ type Config struct {
 	Strategy string `yaml:"strategy"`
 }
 
+// ServerList -> for final integration of servers[], algorithm, Name, HealthChecker
 type ServerList struct {
 	// Servers are the replicas
 	Servers []*backend.Server
@@ -23,7 +24,7 @@ type ServerList struct {
 	Name string
 
 	// Strategy defines how the server list is load balanced.
-	// It can never be 'nil', it should always default to a 'RoundRobin' version.
+	// It should never be 'nil', it should always default to a 'RoundRobin' version.
 	Strategy algorithm.Algorithm
 
 	// Health checker for the servers

@@ -40,7 +40,7 @@ func (h *HealthChecker) Start() {
 func check(server *backend.Server) {
 	_, err := net.DialTimeout("tcp", server.URL.Host, time.Second * 3)
 	if err != nil {
-		fmt.Printf("could not connect to server %v", server.URL.Host)
+		fmt.Printf("could not connect to server %v \n", server.URL.Host)
 		server.SetAliveStatus(false)
 	} else {
 		server.SetAliveStatus(true)
